@@ -1,0 +1,11 @@
+select  product_id
+  , first_year
+  ,quantity
+  ,price from(
+  select product_id
+  ,year first_year
+  ,quantity
+  ,price
+  ,rank()over( PARTITION BY  product_id order by year ) year_rank
+  from sales  
+)t where year_rank=1
