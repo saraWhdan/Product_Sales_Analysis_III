@@ -49,7 +49,7 @@ select  product_id
 -  اولا استخدمت `PARTITION BY` عشان اقسم ال sales ل partions
 - بعد كده رتبتهم بالسنه
 - واخيرا عملت condition بحيث ارجع اول سنه لكل product
- ## تقدروا تقرو على ال Rank() function اكثر من هنا: 
+ ## تقدروا تقرأو عن ال `Rank() function` اكثر من هنا: 
  https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-rank-function/ 
 
 
