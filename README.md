@@ -26,3 +26,31 @@ GROUP BY product_id
 
 
 ال table ده انا عملتله join مع Sales table بحيث اقدر اوصل للمطلوب 
+
+
+
+## SQL Query using Rank() function:
+```sql
+select  product_id
+  , first_year
+  ,quantity
+  ,price from(
+  select product_id
+  ,year first_year
+  ,quantity
+  ,price
+  ,rank()over( PARTITION BY  product_id order by year ) year_rank
+  from sales  
+)t where year_rank=1
+```
+
+
+الطريقه الثانيه هي طريقه استخدام ال RANK() window function
+-  اولا استخدمت `PARTITION BY` عشان اقسم ال sales ل partions
+- بعد كده رتبتهم بالسنه
+- واخيرا عملت condition بحيث ارجع اول سنه لكل product
+ ## تقدروا تقرو على ال Rank() function اكثر من هنا: 
+ https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-rank-function/ 
+
+
+
